@@ -1,11 +1,11 @@
 
 
-```Markdowm
+
 # VGG_CIFAR10: Training & Visualizing VGG_A / VGG_A_BN on CIFAR-10
 
 本项目基于 PyTorch 实现了 VGG_A、VGG_A_Dropout、VGG_A_BN 等模型在 CIFAR-10 数据集上的训练、可视化、损失函数实验和 loss landscape 分析。支持训练曲线可视化、卷积核可视化、梯度追踪等。
 
----
+
 
 ##  项目结构说明
 
@@ -30,31 +30,32 @@ VGG\_BatchNorm/
 
 
 ##支持的模型与功能
+```
 
 | 模型版本            | 描述                 |
 | --------------- | ------------------ |
 | `VGG_A`         | 原始模型，使用 LeakyReLU  |
 | `VGG_A_Light` |   尝试不同神经元 / 卷积核数量 |
 | `VGG_A_BN`      | 增加 BatchNorm，收敛更稳定 |
+```
 
 ###  可选训练增强功能
-
+```
 * Label Smoothing Loss
 * 动态 Dropout（随 Epoch 增大）
 * SGD / Adam 优化器切换
 * 权重初始化
 * 学习率衰减（StepLR）
+```
 
----
 
 ## 模型训练（以 VGG\_A\_BN 为例）
 
 ```
 python train.py
-```
 
 训练结束后会自动保存最佳模型至 `best_model_BN.pth`
----
+```
 
 ##  Loss Landscape 可视化
 
@@ -80,12 +81,12 @@ python visualize_kernels.py
 * 输出图像：`conv1_kernels.png`
 
 
-##实验环境
-
+## 实验环境
+```
 | 库           | 版本   |
 | ----------- | ------ |
 | Python      | 3.9   |
 | PyTorch     |2.0.1+cu118 |
 | torchvision | 0.15.2+cu118|
 | matplotlib  | 3.7.5  |
-
+```
